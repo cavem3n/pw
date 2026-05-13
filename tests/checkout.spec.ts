@@ -10,7 +10,7 @@ import { CheckoutOverviewPageMethods } from '../pages/checkout-overview-page/che
 
 test.describe('Checkout', () => {
 
-    test('Checkout process', async ({ page }) => {
+    test('TC-CHKOUT-001 Checkout process', async ({ page }) => {
         const commonPageMethods = new CommonPageMethods(page)
         const loginPageMethods = new LoginPageMethods(page)
         const productsPageMethods = new ProductsPageMethods(page)

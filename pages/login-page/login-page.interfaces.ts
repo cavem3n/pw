@@ -1,4 +1,4 @@
-import { LoginPageData } from "./login-page.data.ts"
+import { LoginPageData } from "./login-page-data.ts"
 
 export interface User {
     username: string,
@@ -11,7 +11,7 @@ export const standardUser: User = {
 }
 
 export const performanceGlitchUSer: User = {
-    username: LoginPageData.credentials.usernames.performanceGlitchUSer,
+    username: LoginPageData.credentials.usernames.performanceGlitchUsr,
     password: LoginPageData.credentials.password
 }
 

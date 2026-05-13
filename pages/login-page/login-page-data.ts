@@ -2,7 +2,7 @@ export class LoginPageData {
     static get credentials (){
         return{
             usernames: {
-                standarUser: 'standard_user',
+                standardUser: 'standard_user',
                 lockedOutUser: 'locked_out_user',
                 problemUser: 'problem_user',
                 performanceGlitchUsr: 'performance_glitch_user',

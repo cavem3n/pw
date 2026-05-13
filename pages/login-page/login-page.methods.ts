@@ -29,7 +29,7 @@ export class LoginPageMethods {
     }
 
     async verifyMessage(expectedText: string){
-        const text = await this.loginPageElements.otherElements.errorMEssage.textContent()
+        const text = await this.loginPageElements.otherElements.errorMessage.textContent()
         expect(text).toContain(expectedText)
     }
 
@@ -38,4 +38,10 @@ export class LoginPageMethods {
         await this.insertPassword(user.password)
         await this.clickOnLoginButton()
     }
+
+    async verifyLoginPage(expectedText: string){
+        const text = await this.loginPageElements.otherElements.loginMessage.textContent()
+        expect(text).toContain(expectedText)
+    }
+
 }

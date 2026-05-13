@@ -8,7 +8,7 @@ import { CartPageMethods } from '../pages/cart-page/cart-page.methods.ts'
 
 test.describe('Cart test cases', async () => {
 
-    test('Add item to cart', async ({ page }) => {
+    test('TC-CART-001 Add item to cart', async ({ page }) => {
         const commonPageMethods = new CommonPageMethods(page)
         const loginPageMethods = new LoginPageMethods(page)
         const productsPageMethods = new ProductsPageMethods(page)
@@ -26,7 +26,7 @@ test.describe('Cart test cases', async () => {
     })
 
 
-    test('Remove item from cart', async ({ page }) => {
+    test('TC-CART-002 Remove item from cart', async ({ page }) => {
         const commonPageMethods = new CommonPageMethods(page)
         const loginPageMethods = new LoginPageMethods(page)
         const productsPageMethods = new ProductsPageMethods(page)
@@ -41,5 +41,16 @@ test.describe('Cart test cases', async () => {
         await productsPageMethods.clickOnCartIcon()
         await cartPageMethods.clickOnRemoveButton(productName)
         await cartPageMethods.verifyProductIsNotDisplayed(productName)
+    })
+
+    test('TC-CART-003 Add all items to cart', async ({page}) =>{
+        const commonPageMethods = new CommonPageMethods(page)
+        const loginPageMethods = new LoginPageMethods(page)
+        const productsPageMethods = new ProductsPageMethods(page)
+        
+        await commonPageMethods.navigateToTheApplication()
+        await loginPageMethods.login(standardUser)
+        await productsPageMethods.verifyProductsPageIsDisplayed()
+        await productsPageMethods.addAllItemsToCart()
     })
 })
