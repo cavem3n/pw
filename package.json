@@ -9,14 +9,14 @@
     "generate-report": "allure generate --single-file ./allure-results -o ./allure-report  --clean",
     "open-report": "allure serve",
     "local-test": "npm run clean-results && npm run run-test & npm run generate-report && npm run open-report",
-    "ci-test": "npm run clean-results && npm run run-test ; npm run generate-report"
+    "ci-test": "npm run clean-results && npm run run-test & npm run generate-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.47.1",
-    "@types/node": "^22.5.5",
+    "@types/node": "^24.15.5",
     "allure-playwright": "^3.0.0"
   },
   "dependencies": {
