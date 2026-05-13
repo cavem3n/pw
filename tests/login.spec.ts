@@ -61,7 +61,7 @@ test.describe('Login', () => {
         await loginPageMethods.clickOnLoginButton()
         await loginPageMethods.verifyMessage('Sorry, this user has been locked out.')
     })
-
+//
                 test('TC-LOGIN-006 Logout', async ({ page }) => {
         const commonPageMethods = new CommonPageMethods(page)
         const loginPageMethods = new LoginPageMethods(page)
