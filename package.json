@@ -1,23 +1,26 @@
 {
-  "name": "pw",
+  "name": "proyecto-playwright-ts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cavem3n/pw.git"
+  "scripts": {
+    "clean-results": "rimraf allure-results && rimraf playwright-report",
+    "run-test": "npx playwright test --reporter=line,html,allure-playwright",
+    "generate-report": "allure generate --single-file ./allure-results -o ./allure-report  --clean",
+    "open-report": "allure serve",
+    "local-test": "npm run clean-results && npm run run-test & npm run generate-report && npm run open-report",
+    "ci-test": "npm run clean-results && npm run run-test ; npm run generate-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/cavem3n/pw/issues"
-  },
-  "homepage": "https://github.com/cavem3n/pw#readme",
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
-    "@types/node": "^25.7.0"
+    "@playwright/test": "^1.47.1",
+    "@types/node": "^22.5.5",
+    "allure-playwright": "^3.0.0"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.30.0",
+    "rimraf": "^6.0.1"
   }
 }
