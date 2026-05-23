@@ -22,7 +22,7 @@ jobs:
     - name: Run Playwright tests
       run: npm run ci-test
 
-      name: Upload Report
+    - name: Upload Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
