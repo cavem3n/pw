@@ -1,7 +1,9 @@
-name: Playwright Demo Test
+name: Playwright Tests
 on:
-  workflow_dispatch:
-
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 jobs:
   test:
     timeout-minutes: 60
@@ -11,16 +13,12 @@ jobs:
     - uses: actions/setup-node@v6
       with:
         node-version: lts/*
-
     - name: Install dependencies
       run: npm ci
-
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-
     - name: Run Playwright tests
       run: npm run ci-test
-
     - uses: actions/upload-artifact@v5
       if: ${{ !cancelled() }}
       with:
@@ -28,18 +26,11 @@ jobs:
         path: allure-report/
         retention-days: 30
 
-    - name: Build test report
-      uses: simple-elf/allure-report-action@v1.7
-      if: always()
-      with:
-        gh_pages: gh-pages
-        allure_history: allure-history
-        allure_results: build/allure-results
-
-    - name: Publish test report
+    - name: Publish Allure test report
       uses: peaceiris/actions-gh-pages@v3
-      if: always()
+      if: ${{ always() && (steps.allure-report.outcome == 'success') }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages
-        publish_dir: allure-history
+        publish_dir: ${{ steps.allure-report.outputs.reports-site }}
+        destination_dir: ${{ steps.allure-report.outputs.reports-site-path }}
