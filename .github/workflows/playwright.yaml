@@ -19,7 +19,7 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npx run ci-test
+      run: npm run ci-test
 
     - uses: actions/upload-artifact@v5
       if: ${{ !cancelled() }}
