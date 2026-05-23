@@ -6,22 +6,28 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v5
     - uses: actions/setup-node@v5
       with:
         node-version: lts/*
+
     - name: Install dependencies
       run: npm ci
+      
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
     - name: Run Playwright tests
       run: npm run ci-test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
+
+      name: Upload Report
+      if: always()
+      uses: actions/upload-artifact@v4
       with:
         name: allure-report
-        path: allure-report
+        path: allure-report/
         retention-days: 30
 
     - name: Deploy
