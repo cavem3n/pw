@@ -1,13 +1,14 @@
-name: Playwright Tests
+name: Playwright Testing
 on:
   workflow_dispatch:
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v6
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version: lts/*
     - name: Install dependencies
@@ -16,7 +17,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npm run ci-test
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
         name: allure-report
