@@ -23,11 +23,8 @@ jobs:
         path: allure-report/
         retention-days: 30
 
-    - name: Publish Allure test report
-      uses: peaceiris/actions-gh-pages@v3
-      if: ${{ always() && (steps.allure-report.outcome == 'success') }}
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: ${{ steps.allure-report.outputs.reports-site }}
-        destination_dir: ${{ steps.allure-report.outputs.reports-site-path }}
+        publish_dir: ./allure-report
