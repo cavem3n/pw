@@ -16,4 +16,10 @@ export class CartPageElements {
             checkout: this.page.locator('#checkout')
         }
     }
+
+    get cartItemList(){
+        return{
+            addedItemTitle: this.page.locator('.inventory_item_name')
+        }
+    }
 }

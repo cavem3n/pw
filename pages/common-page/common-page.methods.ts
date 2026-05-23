@@ -12,7 +12,7 @@ export class CommonPageMethods {
 
     async navigateToTheApplication() {
         await Logger.logStep('Navigate to the Application')
-        await this.page.goto('https://www.saucedemo.com/v1/index.html')
+        await this.page.goto('https://www.saucedemo.com')
     }
 
     async openMenu() {

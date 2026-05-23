@@ -2,14 +2,17 @@ import { Page } from 'playwright'
 import { CartPageElements } from './cart-page.elements.ts'
 import { Logger } from '../../support/logger'
 import { expect } from '@playwright/test'
+import { ProductsPageMethods } from '../products-page/products-page.methods.ts'
 
 export class CartPageMethods {
     private page: Page
     private cartPageElements: CartPageElements
+    private productPageMethods: ProductsPageMethods
 
     constructor(page: Page) {
         this.page = page
         this.cartPageElements = new CartPageElements(page)
+        this.productPageMethods = new ProductsPageMethods(page)
     }
 
     async clickOnContinueShoppingButton() {
@@ -37,5 +40,9 @@ export class CartPageMethods {
         await Logger.logVerification(`The product "${productName}" should not be shown`)
         const productsCount = await this.cartPageElements.removeButton(productName).count()
         expect(productsCount).toEqual(0)
+    }
+
+    async verifyRandomProductIsDisplayed() {
+        return await this.cartPageElements.cartItemList.addedItemTitle.textContent()
     }
 }
