@@ -22,6 +22,12 @@ jobs:
     - name: Run Playwright tests
       run: npm run ci-test
 
+    - name: Run Allure Action
+      uses: allure-framework/allure-action@v0
+      with:
+        report-directory: "./allure-report"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Upload Report
       if: always()
       uses: actions/upload-artifact@v4
