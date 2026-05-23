@@ -71,7 +71,7 @@ test.describe('Cart test cases', async () => {
         await productsPageMethods.addEachItemToCart()
     })
 
-    test('TC-CART-005 Random Item title check', async ({page}) =>{
+    test('TC-CART-005 Random Item title checking', async ({page}) =>{
         const commonPageMethods = new CommonPageMethods(page)
         const loginPageMethods = new LoginPageMethods(page)
         const productsPageMethods = new ProductsPageMethods(page)
