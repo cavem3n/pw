@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Testing
 on:
   workflow_dispatch:
 
@@ -21,7 +21,7 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: allure-report
-        path: allure-report/
+        path: allure-report
         retention-days: 30
 
     - name: Deploy
