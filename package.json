@@ -6,7 +6,7 @@
   "scripts": {
     "clean-results": "rimraf allure-results && rimraf playwright-report",
     "run-test": "npx playwright test --reporter=line,allure-playwright",
-    "generate-report": "allure generate --single-file ./allure-results -o ./allure-report  --clean --headed",
+    "generate-report": "allure generate --single-file ./allure-results -o ./allure-report  --clean",
     "open-report": "allure serve ./allure-report",
     "local-test": "npm run clean-results && npm run run-test & npm run generate-report && npm run open-report",
     "ci-test": "npm run clean-results && npm run run-test & npm run generate-report"
