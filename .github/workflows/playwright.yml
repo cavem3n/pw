@@ -1,4 +1,4 @@
-name: Playwright Testing
+name: Playwright Tests
 on:
   workflow_dispatch:
 
@@ -6,31 +6,23 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v5
-    - uses: actions/setup-node@v5
+    - uses: actions/setup-node@v6
       with:
         node-version: lts/*
 
     - name: Install dependencies
       run: npm ci
-      
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npm run ci-test
+      run: npx run ci-test
 
-    - name: Run Allure Action
-      uses: allure-framework/allure-action@v0
-      with:
-        report-directory: "./allure-report"
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Upload Report
-      if: always()
-      uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
+      if: ${{ !cancelled() }}
       with:
         name: allure-report
         path: allure-report/
