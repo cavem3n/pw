@@ -16,17 +16,25 @@ export class ProductsPageElements {
 
     get otherElements(){
         return{
-            pageTitle: this.page.locator('.title')
+            pageTitle: this.page.locator('.title'),
         }
+    }
+
+    getRandomItemTitle(nRan: number){
+        return  this.page.locator(`div.inventory_item:nth-child(${nRan}) .inventory_item_name`)
     }
 
     addCartButton(productName: string) { 
         return this.page.locator(`//div[.="${productName}"]//ancestor::div[@class="inventory_item"]//button`) 
     }
 
-    get allItems(){
+   getRandomItemButton(nRan: number){
+        return  this.page.locator(`div.inventory_item:nth-child(${nRan}) > div:nth-child(2) .btn`)
+    }
+
+    get allItemCards(){
         return {
-        allCards: this.page.locator(`div.inventory_item:nth-child(n) > div:nth-child(2) .btn`)
+            allItemList: this.page.locator(`div.inventory_item:nth-child(n) > div:nth-child(2) .btn`),
         }
     }
 

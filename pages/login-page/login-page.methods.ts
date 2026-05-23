@@ -29,6 +29,7 @@ export class LoginPageMethods {
     }
 
     async verifyMessage(expectedText: string){
+        await Logger.logStep('Verify Error message appears')
         const text = await this.loginPageElements.otherElements.errorMessage.textContent()
         expect(text).toContain(expectedText)
     }
@@ -40,6 +41,7 @@ export class LoginPageMethods {
     }
 
     async verifyLoginPage(expectedText: string){
+        await Logger.logStep('Verify Error message appears')
         const text = await this.loginPageElements.otherElements.loginMessage.textContent()
         expect(text).toContain(expectedText)
     }
