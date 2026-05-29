@@ -49,11 +49,12 @@ export class FormPageMethods {
             else if ( month == 10) {var inputMonth:string = "Oct"} 
             else if ( month == 11) {var inputMonth:string = "Nov"} 
             else if ( month == 12) {var inputMonth:string = "Dec"}
-        await this.formPageElements.dropdown.birth.fill(`${day} ${inputMonth} ${year}`), this.page.keyboard.press('Tab')
+        await this.formPageElements.dropdown.birth.fill(`${day} ${inputMonth} ${year}`)
+        await this.page.keyboard.press('Tab');
         const subjectsArray = subjects.split(",")
                 for (const subject of subjectsArray) {const subjectTrim = subject.trim()
                     await this.formPageElements.inputfields.subjects.pressSequentially(subjectTrim, { delay: 20 })
-                    await this.formPageElements.inputfields.subjectsmenu.isVisible()
+                    await expect(this.formPageElements.inputfields.subjectsmenu).toBeVisible()
                     await this.page.keyboard.press('Tab')}
         const hobbiesArray = hobbies.split(",")
                 for (const hobbie of hobbiesArray) {const hobbiesTrim = hobbie.trim()

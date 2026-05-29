@@ -22,7 +22,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   /* workers: process.env.CI ? 1 : undefined, */
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['line'],['allure-playwright']],
+  reporter: [['list', { printSteps: true }],['allure-playwright']],
 
     // Timeout for each 'expect' assertion
   timeout: process.env.CI ? 0 : 0, 

@@ -50,7 +50,7 @@ test.describe('Form Automation', () => {
 
       await commonPageMethods.navigatoToForm();
       await formPageMethods.fillForm(firstName, lastName, userEmail, gender, phone, birth, subjects, hobbies, state, city, address);
-      console.log(record)
+      console.log(`RUNNING TEST: ${record.test_case}`);
     });
     
   }
