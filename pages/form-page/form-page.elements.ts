@@ -62,7 +62,8 @@ export class FormPageElements {
 
     get modal(){
         return{
-            modal: this.page.locator('div.fade:nth-child(3)'),
+            form: this.page.locator('.practice-form-wrapper'),
+            modal: this.page.locator('.modal-open'),
             studentName: this.page.locator('.table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)'),
             emailOutput: this.page.locator('.table > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)'),
             genderOutput: this.page.locator('.table > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)'),

@@ -65,10 +65,8 @@ See Allure Report
 
 ## Lessons Learned
 
-- Run an automated login flow with 6 different scenarios.
-- Run 5 different “Cart” scenario flows.
-- Execute one checkout process.
-- Extract list of “customers” from CSV data and perform actions to a form.
+- Page Object Model.
+- CSV Sync loading & Test Data-driven.
 - Execute CI Tests in GitHub Actions.
 - Generate Allure Report and upload to GitHub Pages.
 

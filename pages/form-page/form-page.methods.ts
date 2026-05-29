@@ -1,6 +1,5 @@
 import { Page } from 'playwright'
 import path from 'path'
-import fs from 'fs'
 import { Logger } from '../../support/logger'
 import { FormPageElements } from './form-page.elements.ts'
 import { expect } from '@playwright/test'
@@ -50,11 +49,12 @@ export class FormPageMethods {
             else if ( month == 10) {var inputMonth:string = "Oct"} 
             else if ( month == 11) {var inputMonth:string = "Nov"} 
             else if ( month == 12) {var inputMonth:string = "Dec"}
-        await this.formPageElements.dropdown.birth.fill(`${day} ${inputMonth} ${year}`), this.page.keyboard.press('Tab')
+        await this.formPageElements.dropdown.birth.fill(`${day} ${inputMonth} ${year}`)
+        await this.page.keyboard.press('Tab');
         const subjectsArray = subjects.split(",")
                 for (const subject of subjectsArray) {const subjectTrim = subject.trim()
                     await this.formPageElements.inputfields.subjects.pressSequentially(subjectTrim, { delay: 20 })
-                    await this.formPageElements.inputfields.subjectsmenu.isVisible()
+                    await expect(this.formPageElements.inputfields.subjectsmenu).toBeVisible()
                     await this.page.keyboard.press('Tab')}
         const hobbiesArray = hobbies.split(",")
                 for (const hobbie of hobbiesArray) {const hobbiesTrim = hobbie.trim()
@@ -71,7 +71,9 @@ export class FormPageMethods {
         await this.formPageElements.dropdown.city.fill(city)
         await this.page.keyboard.press('Tab')
         await this.formPageElements.buttons.submit_btn.click()
-        await this.formPageElements.modal.modal.isVisible()
+        await expect(this.formPageElements.modal.modal).toBeVisible()
+
+        // await this.formPageElements.inputfields.subjectsmenu.isVisible() IS NOT WAIT
 
         await Logger.logVerification(`Verify Data is Correct`, async () => {
             await expect(this.formPageElements.modal.studentName).toContainText(`${firstName} ${lastName}`);
@@ -107,6 +109,5 @@ export class FormPageMethods {
             await expect(this.formPageElements.modal.addressOutput).toContainText(`${address}`);
             await expect(this.formPageElements.modal.stateCityOutput).toContainText(`${state} ${city}`);
             });
-
     }
 }

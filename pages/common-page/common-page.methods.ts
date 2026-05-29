@@ -1,18 +1,18 @@
 import { Page } from 'playwright'
 import { CommonPageElements } from './common-page.elements.ts'
 import { Logger } from '../../support/logger'
-import fs from 'fs';
-import path from 'path';
-import { test } from '@playwright/test';
-import { parse } from 'csv-parse/sync';
+import { FormPageElements } from '../form-page/form-page.elements.ts'
+import { expect } from '@playwright/test'
 
 export class CommonPageMethods {
     private page: Page
     private commonPageElements: CommonPageElements
+    private formPageElements: FormPageElements
 
     constructor(page: Page) {
         this.page = page
         this.commonPageElements = new CommonPageElements(page)
+        this.formPageElements = new FormPageElements (page)
     }
 
     async navigateToTheApplication() {
@@ -48,5 +48,6 @@ export class CommonPageMethods {
     async navigatoToForm() {
         await Logger.logStep('Navigate to the Application')
         await this.page.goto('https://demoqa.com/automation-practice-form')
+        await expect(this.formPageElements.modal.form).toBeVisible()
     }
 }
