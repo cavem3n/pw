@@ -11,7 +11,7 @@ A simple but powerfull Playwright Demo
 
 ## Appendix
 
-This automation framework provides real-world exercises on using Playwright for learning purposes, covering login flows, assertions, purchase flows, checkout, API, and various exercises involving web components such as forms, dropdown menus, buttons, file uploads, and reading data from .csv files. $${\color{red}The data used is fictional and intended for testing purposes.$$
+This automation framework provides real-world exercises on using Playwright for learning purposes, covering login flows, assertions, purchase flows, checkout, API, and various exercises involving web components such as forms, dropdown menus, buttons, file uploads, and reading data from .csv files. $${\color{orange}The  \space data  \space used \space was \space randomly \space generated \space and \space is \space fictional \space for  \space testing  \space purposes.}$$
 
 
 ## Documentation
