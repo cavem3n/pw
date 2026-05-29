@@ -16,7 +16,7 @@ test.describe('Form Automation', () => {
 
   for (const record of records) {
 
-    test(`foo: ${record.test_case} @slow`, async ({ page }) => {
+    test(`foo: ${record.test_case}`, async ({ page }) => {
       const commonPageMethods = new CommonPageMethods(page)
       const formPageMethods = new FormPageMethods(page)
       const firstName:string = record.firstName
