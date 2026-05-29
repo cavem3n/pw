@@ -26,7 +26,7 @@ export class ProductsPageMethods {
     }
 
     async verifyProductsPageIsDisplayed() {
-        await Logger.logVerification('Verify that the Products page is shown')
+        await Logger.logVer('Verify that the Products page is shown')
         const elementsCount = await this.productsPageElements.otherElements.pageTitle.count()
         expect(elementsCount).toEqual(1)
     }
@@ -37,7 +37,7 @@ export class ProductsPageMethods {
             for(let i=1; i<=displayedCards;i++) {
                 await this.page.locator('div.inventory_item:nth-child('+i+') > div:nth-child(2) .btn').click()
     }
-        await Logger.logVerification(`Verify cart number is updated with ${displayedCards} items`)
+        await Logger.logVer(`Verify cart number is updated with ${displayedCards} items`)
         const updatedCards = displayedCards.toString();
         const verifyBadge = await this.productsPageElements.icons.cartBadge.first().textContent()
         expect(updatedCards).toEqual(verifyBadge)
@@ -47,7 +47,7 @@ export class ProductsPageMethods {
         const displayedCards = await this.productsPageElements.allItemCards.allItemList.count()
         for(let i=1; i<=displayedCards;i++) {
                 await this.page.locator('div.inventory_item:nth-child('+i+') > div:nth-child(2) .btn').click()
-                await Logger.logVerification(`Verify cart number is updated with added item`)
+                await Logger.logVer(`Verify cart number is updated with added item`)
                 const verifyBadge = await this.productsPageElements.icons.cartBadge.first().innerText()
                 const num = Number(verifyBadge)
                 expect(i).toEqual(num)
@@ -64,14 +64,14 @@ export class ProductsPageMethods {
         //Select one of the random buttons
         const nRan = Math.floor(Math.random()*displayedCards)+1
 
-        await Logger.logVerification(`Add item No. ${nRan}`)
+        await Logger.logVer(`Add item No. ${nRan}`)
         
         //Store item text in string and click button
         const selectedRandomItemTitle = this.productsPageElements.getRandomItemTitle(nRan).innerText()
         await this.productsPageElements.getRandomItemButton(nRan).click()
 
         //Verify Badge to be 1
-        await Logger.logVerification(`Verify cart number is updated with added item`)
+        await Logger.logVer(`Verify cart number is updated with added item`)
         const verifyBadge = await this.productsPageElements.icons.cartBadge.first().innerText()
         expect("1").toEqual(verifyBadge)
 

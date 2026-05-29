@@ -22,7 +22,7 @@ export class CheckoutOverviewPageMethods {
     }
 
     async verifyCheckoutOverviewPageIsDisplayed(){
-        await Logger.logVerification('The Checkout Overview page should be displayed')
+        await Logger.logVer('The Checkout Overview page should be displayed')
         const elementCount = await this.checkoutOverviewPageElements.otherElements.pageTitle.count()
         expect(elementCount).toEqual(1)
     }

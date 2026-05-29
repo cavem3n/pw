@@ -31,13 +31,13 @@ export class CartPageMethods {
     }
 
     async verifyProductIsDisplayed(productName: string) {
-        await Logger.logVerification(`The product "${productName}" should be shown`)
+        await Logger.logVer(`The product "${productName}" should be shown`)
         const productsCount = await this.cartPageElements.removeButton(productName).count()
         expect(productsCount).toEqual(1)
     }
 
     async verifyProductIsNotDisplayed(productName: string) {
-        await Logger.logVerification(`The product "${productName}" should not be shown`)
+        await Logger.logVer(`The product "${productName}" should not be shown`)
         const productsCount = await this.cartPageElements.removeButton(productName).count()
         expect(productsCount).toEqual(0)
     }

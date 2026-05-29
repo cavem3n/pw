@@ -14,6 +14,11 @@ export class Logger {
             });
     }
 
+    static async logVer(description: string){
+        await step(`VERIFICATION - ${description}`, () => { })
+
+    }
+
     static async logPreCondition(description: string) {
         await step(`PRE-CONDITION - ${description}`, () => { })
     }
