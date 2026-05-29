@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "commonjs",
+
   "scripts": {
     "clean-results": "rimraf allure-results && rimraf playwright-report",
     "run-test": "npx playwright test --reporter=line,allure-playwright",
