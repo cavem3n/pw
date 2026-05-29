@@ -63,6 +63,14 @@ See Allure Report
 ```
 
 
+## Lessons Learned
+
+- Run an automated login flow with 6 different scenarios.
+- Run 5 different “Cart” scenario flows.
+- Execute one checkout process.
+- Extract 100 “customers” from CSV data and upload them to a form
+
+
 ## License
 
 MIT License
