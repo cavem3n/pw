@@ -72,7 +72,7 @@ export class FormPageMethods {
         await this.formPageElements.buttons.submit_btn.click()
         await expect(this.formPageElements.modal.modal).toBeVisible()
 
-
+        await Logger.logVerification(`Verify Data is Correct`, async () => {
             await expect(this.formPageElements.modal.studentName).toContainText(`${firstName} ${lastName}`);
             await expect(this.formPageElements.modal.emailOutput).toContainText(`${userEmail}`);
             await expect(this.formPageElements.modal.genderOutput).toContainText(`${gender}`);
@@ -81,7 +81,7 @@ export class FormPageMethods {
                     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
             ];
-            const inputMonth1 = shortMonths[month - 1];
+            const inputMonth = shortMonths[month - 1];
             const monthMap: Record<string, string> = {
                     Jan: 'January',
                     Feb: 'February',
@@ -96,7 +96,7 @@ export class FormPageMethods {
                     Nov: 'November',
                     Dec: 'December'
                 };
-            const fullMonth = monthMap[inputMonth1];
+            const fullMonth = monthMap[inputMonth];
             const fullDay = day
             const formattedDay = String(fullDay).padStart(2, '0');
             await expect(this.formPageElements.modal.dateofBirthOutput).toContainText(`${formattedDay} ${fullMonth},${year}`);
@@ -105,6 +105,6 @@ export class FormPageMethods {
             await expect(this.formPageElements.modal.attachmentOutput).toContainText('pic.jpg');
             await expect(this.formPageElements.modal.addressOutput).toContainText(`${address}`);
             await expect(this.formPageElements.modal.stateCityOutput).toContainText(`${state} ${city}`);
-            
+            });
     }
 }
