@@ -5,8 +5,13 @@ export class Logger {
         await step('STEP - ' + description, () => { })
     }
 
-    static async logVerification(description: string) {
-        await step(`VERIFICATION - ${description}`, () => { })
+    static async logVerification(
+            message: string,
+            action: () => Promise<void>
+            ): Promise<void> {
+            await step('VERIFICATION - ' + message, async () => {
+                await action();
+            });
     }
 
     static async logPreCondition(description: string) {
