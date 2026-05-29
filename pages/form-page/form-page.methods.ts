@@ -1,6 +1,5 @@
 import { Page } from 'playwright'
 import path from 'path'
-import fs from 'fs'
 import { Logger } from '../../support/logger'
 import { FormPageElements } from './form-page.elements.ts'
 import { expect } from '@playwright/test'
@@ -107,6 +106,5 @@ export class FormPageMethods {
             await expect(this.formPageElements.modal.addressOutput).toContainText(`${address}`);
             await expect(this.formPageElements.modal.stateCityOutput).toContainText(`${state} ${city}`);
             });
-
     }
 }
