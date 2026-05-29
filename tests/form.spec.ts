@@ -1,11 +1,17 @@
 import { test } from '@playwright/test'
 import fs from 'fs'
 import path from 'path'
-import { parse } from "csv-parse/sync";
+import { parse } from "csv-parse/sync"
 import { CommonPageMethods } from '../pages/common-page/common-page.methods.ts'
 import { FormPageMethods } from '../pages/form-page/form-page.methods.ts'
+import { readCsv } from '../support/csvHelper.ts'
 import * as allure from 'allure-js-commons'
 import { Severity } from 'allure-js-commons'
+
+//CSV Data must be loaded before Describe in Test
+  const csvPath = path.join(process.cwd(), 'data', 'data.csv')
+  const records = readCsv(csvPath)
+  console.log('TOTAL RECORDS:', records.length);
 
 test.describe('Form Automation', () => {
 
@@ -15,10 +21,11 @@ test.describe('Form Automation', () => {
   // console.log('IMG PATH:', './data/pic.jpg');
   // console.log('Exists?', fs.existsSync('./data/pic.jpg'));
 
-  const records = parse(fs.readFileSync(path.join(process.cwd(), 'data', 'data.csv')), {
-    columns: true,
-    skip_empty_lines: false,
-  });
+  // const records = parse(fs.readFileSync(path.join(process.cwd(), 'data', 'data.csv')), {
+  //   columns: true,
+  //   skip_empty_lines: false,
+  // });
+
 
   for (const record of records) {
 
