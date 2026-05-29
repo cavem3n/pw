@@ -70,7 +70,7 @@ export class FormPageMethods {
         await this.formPageElements.dropdown.city.fill(city)
         await this.page.keyboard.press('Tab')
         await this.formPageElements.buttons.submit_btn.click()
-        await this.formPageElements.modal.modal.isVisible()
+        await expect(this.formPageElements.modal.modal).toBeVisible()
 
         await Logger.logVerification(`Verify Data is Correct`, async () => {
             await expect(this.formPageElements.modal.studentName).toContainText(`${firstName} ${lastName}`);

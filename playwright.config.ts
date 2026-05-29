@@ -14,7 +14,7 @@ export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
-  workers: 1,
+  workers: process.env.CI ? 1 : undefined
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -35,7 +35,6 @@ export default defineConfig({
     // Timeout for each action like click() or fill()
     // actionTimeout: 15_000,
     // Timeout for page.goto() and other navigation
-    navigationTimeout: 30_000,
      screenshot: {
       mode: 'on',
       fullPage: true,
@@ -43,6 +42,8 @@ export default defineConfig({
     video: 'on',
     colorScheme: 'light',
     headless: true,
+    actionTimeout: 30_000,
+    navigationTimeout: 60_000,
     // viewport: { width: 1280, height: 720 },
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
