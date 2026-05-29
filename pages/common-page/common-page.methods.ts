@@ -12,7 +12,7 @@ export class CommonPageMethods {
     constructor(page: Page) {
         this.page = page
         this.commonPageElements = new CommonPageElements(page)
-        this.formPageElements = new FormPageElements(page)
+        this.formPageElements = new FormPageElements (page)
     }
 
     async navigateToTheApplication() {
@@ -48,6 +48,6 @@ export class CommonPageMethods {
     async navigatoToForm() {
         await Logger.logStep('Navigate to the Application')
         await this.page.goto('https://demoqa.com/automation-practice-form')
-        await expect(this.formPageElements.modal.form).isVisible()
+        await expect(this.formPageElements.modal.form).toBeVisible()
     }
 }
