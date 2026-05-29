@@ -1,1 +1,0 @@
-[{"uid":"b244e80b6830da03","name":"TC-CART-002 Remove item from cart","time":{"start":1780074091116,"stop":1780074092243,"duration":1127},"status":"failed","severity":"normal"},{"uid":"ca033a168f56e04d","name":"TC-CART-001 Add item to cart","time":{"start":1780074086828,"stop":1780074087533,"duration":705},"status":"failed","severity":"normal"}]

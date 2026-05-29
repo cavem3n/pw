@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","659","TC-CART-002 Remove item from cart","","2026-05-29","passed","2026-05-29","Cart test cases","cart.spec.ts","",""
+"","865","TC-CART-003 Add all items to cart at once","","2026-05-29","passed","2026-05-29","Cart test cases","cart.spec.ts","",""
+"","2315","foo: VALUE 1","","2026-05-29","failed","2026-05-29","Form Automation","form.spec.ts","",""
+"","610","TC-CART-005 Random Item title checking","","2026-05-29","passed","2026-05-29","Cart test cases","cart.spec.ts","",""
+"","1348","TC-CART-004 Add all items to cart by each one","","2026-05-29","passed","2026-05-29","Cart test cases","cart.spec.ts","",""
+"","790","TC-CHKOUT-001 Checkout process","","2026-05-29","passed","2026-05-29","Checkout","checkout.spec.ts","",""
+"","737","TC-CART-001 Add item to cart","","2026-05-29","passed","2026-05-29","Cart test cases","cart.spec.ts","",""
