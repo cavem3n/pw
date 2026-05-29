@@ -21,10 +21,10 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Debug CSV
-      run: |
-        ls -R data
-        cat data/data.csv
+    #- name: Debug CSV
+    #  run: |
+    #    ls -R data
+    #    cat data/data.csv
 
     - name: Run Playwright tests
       run: npm run ci-test
