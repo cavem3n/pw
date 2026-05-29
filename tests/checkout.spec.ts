@@ -26,7 +26,7 @@ test.describe('Checkout', () => {
 
         await productsPageMethods.clickOnCartIcon()
         await cartPageMethods.clickOnCheckoutButton()
-        await checkoutPageMethods.insertFirstName('algo')
+        await checkoutPageMethods.insertFirstName('first name')
         await checkoutPageMethods.insertLastName('last name')
         await checkoutPageMethods.insertPostalCode('345645')
         await checkoutPageMethods.clickOnContinueButton()

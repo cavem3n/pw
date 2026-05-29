@@ -1,6 +1,11 @@
 import { Page } from 'playwright'
 import { CommonPageElements } from './common-page.elements.ts'
 import { Logger } from '../../support/logger'
+import fs from 'fs';
+import path from 'path';
+import { test } from '@playwright/test';
+import { parse } from 'csv-parse/sync';
+
 export class CommonPageMethods {
     private page: Page
     private commonPageElements: CommonPageElements
@@ -38,5 +43,10 @@ export class CommonPageMethods {
     async clickOnResetAppStateOption() {
         await Logger.logStep('Click on Reset App State')
         await this.commonPageElements.letfMenu.resetAppState.click();
+    }
+
+    async navigatoToForm() {
+        await Logger.logStep('Navigate to the Application')
+        await this.page.goto('https://demoqa.com/automation-practice-form')
     }
 }
