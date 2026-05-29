@@ -16,14 +16,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.47.1",
-    "@types/node": "^22.5.5",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^22.19.19",
     "allure-playwright": "^3.0.0"
   },
   "dependencies": {
-    "allure-commandline": "^2.30.0",
+    "allure-commandline": "^2.42.0",
     "csv-parse": "^6.2.1",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.1.3"
   }
-  
 }
