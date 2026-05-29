@@ -10,7 +10,7 @@
     "generate-report": "allure generate --single-file allure-results --clean -o allure-report ",
     "open-report": "allure serve",
     "local-test": "npm run clean-results && npm run run-test & npm run generate-report && npm run open-report",
-    "ci-test": "npm run clean-results && npm run run-test --trace on & npm run generate-report"
+    "ci-test": "npm run clean-results && npm run run-test & npm run generate-report"
   },
   "keywords": [],
   "author": "",
