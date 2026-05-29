@@ -47,8 +47,10 @@ test.describe('Form Automation', () => {
       const state:string = record.state
       const city:string = record.city
       const address:string = record.address
-      await commonPageMethods.navigatoToForm()
-      await formPageMethods.fillForm(firstName, lastName, userEmail, gender, phone, birth, subjects, hobbies, state, city, address)
+
+      await commonPageMethods.navigatoToForm();
+      await formPageMethods.fillForm(firstName, lastName, userEmail, gender, phone, birth, subjects, hobbies, state, city, address);
+      console.log(record)
     });
     
   }
