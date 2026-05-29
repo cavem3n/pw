@@ -26,9 +26,12 @@ jobs:
     #    ls -R data
     #    cat data/data.csv
 
+    #   Debug CI
+    #- name: Run Playwright tests
+    #  run: npx playwright test --reporter=list
+
     - name: Run Playwright tests
-     #run: npm run ci-test
-      run: npx playwright test --reporter=list
+      run: npm run ci-test
     
     - name: Get Allure history
       uses: actions/checkout@v6

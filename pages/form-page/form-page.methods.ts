@@ -73,6 +73,8 @@ export class FormPageMethods {
         await this.formPageElements.buttons.submit_btn.click()
         await expect(this.formPageElements.modal.modal).toBeVisible()
 
+        // await this.formPageElements.inputfields.subjectsmenu.isVisible() IS NOT WAIT
+
         await Logger.logVerification(`Verify Data is Correct`, async () => {
             await expect(this.formPageElements.modal.studentName).toContainText(`${firstName} ${lastName}`);
             await expect(this.formPageElements.modal.emailOutput).toContainText(`${userEmail}`);
