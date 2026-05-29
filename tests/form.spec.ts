@@ -9,7 +9,13 @@ import { Severity } from 'allure-js-commons'
 
 test.describe('Form Automation', () => {
 
-  const records = parse(fs.readFileSync(path.join(__dirname, '../data.csv')), {
+  // //Path verification
+  // console.log('CSV PATH:', './data/data.csv');
+  // console.log('Exists?', fs.existsSync('./data/data.csv'));
+  // console.log('IMG PATH:', './data/pic.jpg');
+  // console.log('Exists?', fs.existsSync('./data/pic.jpg'));
+
+  const records = parse(fs.readFileSync(path.join(process.cwd(), 'data', 'data.csv')), {
     columns: true,
     skip_empty_lines: false,
   });

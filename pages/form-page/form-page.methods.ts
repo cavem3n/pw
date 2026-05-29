@@ -1,4 +1,6 @@
 import { Page } from 'playwright'
+import path from 'path'
+import fs from 'fs'
 import { Logger } from '../../support/logger'
 import { FormPageElements } from './form-page.elements.ts'
 import { expect } from '@playwright/test'
@@ -60,7 +62,9 @@ export class FormPageMethods {
                     else if (hobbiesTrim == "Reading") {await this.formPageElements.checkboxes.reading.check()}
                     else if (hobbiesTrim == "Music") {await this.formPageElements.checkboxes.music.check()}
                 }
-        await this.formPageElements.buttons.browse.setInputFiles('pic.jpg')
+        const imagePath = path.join(process.cwd(), 'data', 'pic.jpg');
+        //console.log(fs.existsSync(imagePath));
+        await this.formPageElements.buttons.browse.setInputFiles(imagePath)
         await this.formPageElements.inputfields.address.fill(address)
         await this.formPageElements.dropdown.state.fill(state)
         await this.page.keyboard.press('Tab')
@@ -99,7 +103,7 @@ export class FormPageMethods {
             await expect(this.formPageElements.modal.dateofBirthOutput).toContainText(`${formattedDay} ${fullMonth},${year}`);
             await expect(this.formPageElements.modal.subjectsOutput).toContainText(`${subjects}`);
             await expect(this.formPageElements.modal.hobbiesOutput).toContainText(`${hobbies}`);
-            await expect(this.formPageElements.modal.attachmentOutput).toContainText("pic.jpg");
+            await expect(this.formPageElements.modal.attachmentOutput).toContainText('pic.jpg');
             await expect(this.formPageElements.modal.addressOutput).toContainText(`${address}`);
             await expect(this.formPageElements.modal.stateCityOutput).toContainText(`${state} ${city}`);
             });

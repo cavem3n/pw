@@ -23,9 +23,19 @@ export default defineConfig({
   /* workers: process.env.CI ? 1 : undefined, */
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['line'],['allure-playwright']],
-  /*timeout: 10_000,*/
+
+    // Timeout for each 'expect' assertion
+  timeout: process.env.CI ? 60_000 : 30_000, 
+    expect: {
+    // Timeout for each 'expect' assertion
+    timeout: 10_000,
+  },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    // Timeout for each action like click() or fill()
+    actionTimeout: 15_000,
+    // Timeout for page.goto() and other navigation
+    navigationTimeout: 30_000,
      screenshot: {
       mode: 'on',
       fullPage: true,
