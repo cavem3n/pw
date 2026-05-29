@@ -1,6 +1,6 @@
 import { Page } from 'playwright'
 import { CartPageElements } from './cart-page.elements.ts'
-import { Logger } from '../../support/logger'
+import { Logger } from '../../support/logger.ts'
 import { expect } from '@playwright/test'
 import { ProductsPageMethods } from '../products-page/products-page.methods.ts'
 

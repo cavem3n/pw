@@ -8,6 +8,11 @@ import { readCsv } from '../support/csvHelper.ts'
 import * as allure from 'allure-js-commons'
 import { Severity } from 'allure-js-commons'
 
+//CSV Data must be loaded before Describe in Test
+  const csvPath = path.join(process.cwd(), 'data', 'data.csv')
+  const records = readCsv(csvPath)
+  console.log('TOTAL RECORDS:', records.length);
+
 test.describe('Form Automation', () => {
 
   // //Path verification
@@ -21,9 +26,7 @@ test.describe('Form Automation', () => {
   //   skip_empty_lines: false,
   // });
 
-  const csvPath = path.join(process.cwd(), 'data', 'data.csv')
-  const records = readCsv(csvPath)
-  console.log('TOTAL RECORDS:', records.length);
+
   for (const record of records) {
 
     test(`foo: ${record.test_case} @slow`, async ({ page }) => {
