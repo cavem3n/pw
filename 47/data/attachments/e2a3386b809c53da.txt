@@ -1,0 +1,16 @@
+{
+  test_case: 'VALUE 1',
+  names: 'Madonna Austin',
+  firstName: 'Madonna',
+  lastName: 'Austin',
+  userEmail: 'rutrum.eu@icloud.edu',
+  gender: 'Male',
+  phone: '5369538244',
+  birth: '30/04/81',
+  subjects: 'Chemistry, Computer Science, Commerce, Physics, Accounting, Economics, Social Studies, Civics, Maths, Arts, Biology, Hindi, English, History',
+  hobbies: 'Sports, Reading, Music',
+  postalZip: '47S 7K7',
+  state: 'NCR',
+  city: 'Delhi',
+  address: '2425 Luctus Street'
+}
