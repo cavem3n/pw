@@ -1,6 +1,6 @@
 import { Page } from 'playwright'
 import { LoginPageElements } from './login-page.elements.ts'
-import { Logger } from '../../support/logger'
+import { Logger } from '../../support/logger.ts'
 import { expect } from '@playwright/test'
 import { User } from './login-page.interfaces.ts'
 
