@@ -9,19 +9,57 @@ A simple but powerfull Playwright Demo
 - [@cavem3n](https://www.github.com/cavem3n)
 
 
+## Appendix
+
+This automation framework provides real-world exercises on using Playwright for learning purposes, covering login flows, assertions, purchase flows, checkout, API, and various exercises involving web components such as forms, dropdown menus, buttons, file uploads, and reading data from .csv files. $${\color{red}The data used is fictional and intended for testing purposes.$$
+
+
 ## Documentation
 
 [Playwright](https://playwright.dev/docs/intro),
 [Allure Reports](https://allurereport.org/docs/),
-[TypeScript](https://www.typescriptlang.org/docs/)
+[TypeScript](https://www.typescriptlang.org/docs/),
+[CSV-Parse](https://csv.js.org/parse/)
+
+## Installation
+
+To install dependencies run the following command
+
+```bash
+npm install
+```
 
 
-## Running Tests
+## Run Locally
 
-To run tests, run the following command
+Clone the project
+
+```bash
+  git clone https://github.com/cavem3n/pw.git
+```
+
+Go to the project directory
+
+```bash
+  cd pw
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start tests and generate report
 
 ```bash
   npm run clean-results && npm run run-test & npm run generate-report
+```
+
+See Allure Report
+
+```bash
+  allure serve
 ```
 
 
