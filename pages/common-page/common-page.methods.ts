@@ -1,7 +1,7 @@
 import { Page } from 'playwright'
 import { CommonPageElements } from './common-page.elements.ts'
 import { Logger } from '../../support/logger'
-import { FormPageElements } from './form-page.elements.ts'
+import { FormPageElements } from '../form-page/form-page.elements.ts'
 import { expect } from '@playwright/test'
 
 export class CommonPageMethods {
