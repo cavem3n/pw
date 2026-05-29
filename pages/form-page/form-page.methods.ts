@@ -51,11 +51,16 @@ export class FormPageMethods {
             else if ( month == 12) {var inputMonth:string = "Dec"}
         await this.formPageElements.dropdown.birth.fill(`${day} ${inputMonth} ${year}`)
         await this.page.keyboard.press('Tab');
-        const subjectsArray = subjects.split(",")
+
+        const subjectsArray = subjects
+                            ?.split(',')
+                            .map(s => s.trim())
+                            .filter(Boolean) ?? [];
                 for (const subject of subjectsArray) {const subjectTrim = subject.trim()
                     await this.formPageElements.inputfields.subjects.pressSequentially(subjectTrim, { delay: 20 })
                     await expect(this.formPageElements.inputfields.subjectsmenu).toBeVisible()
                     await this.page.keyboard.press('Tab')}
+
         const hobbiesArray = hobbies.split(",")
                 for (const hobbie of hobbiesArray) {const hobbiesTrim = hobbie.trim()
                     if (hobbiesTrim == "Sports") {await this.formPageElements.checkboxes.sports.check()}

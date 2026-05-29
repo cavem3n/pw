@@ -25,10 +25,10 @@ export default defineConfig({
   reporter: [['list', { printSteps: true }],['allure-playwright']],
 
     // Timeout for each 'expect' assertion
-  timeout: process.env.CI ? 0 : 0, 
+  timeout: process.env.CI ? 60_000 : 30_000, 
     expect: {
     // Timeout for each 'expect' assertion
-    timeout: 0,
+    timeout: 60_000,
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -42,8 +42,8 @@ export default defineConfig({
     video: 'on',
     colorScheme: 'light',
     headless: true,
-    actionTimeout: 0,
-    navigationTimeout: 0,
+    actionTimeout: 30_000,
+    navigationTimeout: 60_000,
     // viewport: { width: 1280, height: 720 },
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
