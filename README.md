@@ -63,6 +63,11 @@ See Allure Report
 ```
 
 
+## Generated Report Demo
+
+https://cavem3n.github.io/pw/
+
+
 ## Lessons Learned
 
 - Page Object Model.
