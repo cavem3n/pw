@@ -25,7 +25,14 @@ test.describe('Form Automation', () => {
   //   columns: true,
   //   skip_empty_lines: false,
   // });
-
+    
+  // CI Logging
+    console.log('CWD:', process.cwd());
+    console.log('CSV PATH:', csvPath);
+    console.log('FILE EXISTS:', fs.existsSync(csvPath));
+    console.log('RAW FILE SIZE:', fs.readFileSync(csvPath).length);
+    console.log('RECORDS LENGTH:', records.length);
+    console.log('FIRST RECORD:', records[0]);
 
   for (const record of records) {
 
