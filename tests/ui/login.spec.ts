@@ -1,11 +1,11 @@
 import { test } from '@playwright/test'
-import { CommonPageMethods } from '../pages/common-page/common-page.methods.ts'
-import { LoginPageMethods } from '../pages/login-page/login-page.methods.ts'
-import { LoginPageData } from '../pages/login-page/login-page-data.ts'
-import { ProductsPageMethods } from '../pages/products-page/products-page.methods.ts'
+import { CommonPageMethods } from '../../pages/common-page/common-page.methods.ts'
+import { LoginPageMethods } from '../../pages/login-page/login-page.methods.ts'
+import { LoginPageData } from '../../pages/login-page/login-page-data.ts'
+import { ProductsPageMethods } from '../../pages/products-page/products-page.methods.ts'
 import * as allure from 'allure-js-commons'
 import { Severity } from 'allure-js-commons'
-import * as interfaces from '../pages/login-page/login-page.interfaces.ts'
+import * as interfaces from '../../pages/login-page/login-page.interfaces.ts'
 
 const credentials = LoginPageData.credentials
 

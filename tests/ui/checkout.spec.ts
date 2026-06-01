@@ -1,12 +1,12 @@
 import { test } from '@playwright/test'
-import { Logger } from '../support/logger'
-import { CommonPageMethods } from '../pages/common-page/common-page.methods.ts'
-import { LoginPageMethods } from '../pages/login-page/login-page.methods.ts'
-import { ProductsPageMethods } from '../pages/products-page/products-page.methods.ts'
-import { CartPageMethods } from '../pages/cart-page/cart-page.methods.ts'
-import { standardUser } from '../pages/login-page/login-page.interfaces.ts'
-import { CheckoutPageMethods } from '../pages/checkout-page/checkout-page.methods.ts'
-import { CheckoutOverviewPageMethods } from '../pages/checkout-overview-page/checkout-overview-page.methods.ts'
+import { Logger } from '../../support/logger.ts'
+import { CommonPageMethods } from '../../pages/common-page/common-page.methods.ts'
+import { LoginPageMethods } from '../../pages/login-page/login-page.methods.ts'
+import { ProductsPageMethods } from '../../pages/products-page/products-page.methods.ts'
+import { CartPageMethods } from '../../pages/cart-page/cart-page.methods.ts'
+import { standardUser } from '../../pages/login-page/login-page.interfaces.ts'
+import { CheckoutPageMethods } from '../../pages/checkout-page/checkout-page.methods.ts'
+import { CheckoutOverviewPageMethods } from '../../pages/checkout-overview-page/checkout-overview-page.methods.ts'
 
 test.describe('Checkout', () => {
 

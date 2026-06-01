@@ -50,7 +50,10 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    browserName: 'chromium'
+    browserName: 'chromium',
+    extraHTTPHeaders: {
+      'x-api-key': process.env.REQRES_API_KEY || '',
+    },
   },
 
   /* Configure projects for major browsers */

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "scripts": {
     "clean-results": "rimraf allure-results && rimraf playwright-report",
     "run-test": "npx playwright test --reporter=line,allure-playwright",
@@ -23,6 +22,7 @@
   "dependencies": {
     "allure-commandline": "^2.42.0",
     "csv-parse": "^6.2.1",
+    "dotenv": "^17.4.2",
     "rimraf": "^6.1.3"
   }
 }
