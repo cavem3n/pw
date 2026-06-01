@@ -16,9 +16,9 @@ This automation framework provides real-world exercises on using Playwright for 
 
 ## Documentation
 
-[Playwright](https://playwright.dev/docs/intro),
-[Allure Reports](https://allurereport.org/docs/),
-[TypeScript](https://www.typescriptlang.org/docs/),
+[Playwright](https://playwright.dev/docs/intro)
+[Allure Reports](https://allurereport.org/docs/)
+[TypeScript](https://www.typescriptlang.org/docs/)
 [CSV-Parse](https://csv.js.org/parse/)
 
 ## Installation
