@@ -1,0 +1,30 @@
+URL: https://rickandmortyapi.com/api/
+Status: 200
+OK: true
+{
+  date: 'Mon, 01 Jun 2026 20:16:54 GMT',
+  'content-type': 'application/json; charset=utf-8',
+  'transfer-encoding': 'chunked',
+  connection: 'keep-alive',
+  server: 'cloudflare',
+  'x-xss-protection': '1; mode=block',
+  nel: '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}',
+  'access-control-allow-origin': '*',
+  etag: 'W/"a6-enZrapqif5C6f+1pGTVpl8IEmfQ"',
+  'x-proxy-cache': 'MISS',
+  'cache-control': 'public, max-age=7776000, immutable',
+  'x-frame-options': 'SAMEORIGIN',
+  'cf-cache-status': 'HIT',
+  'report-to': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=zrkgk5SQRb3U7jdLB7kn1ru2oIIi44GFrg9rT4VC0%2BcxnsxdOnv5XEuU0a6r9tZqU7s9HifJE%2B2yI3g2pJpQs95aXa7kWJipqNeHo4i3aGIbRtNB77WanJ2rZlc4xbte31qLdope"}]}',
+  'expect-ct': 'max-age=86400, enforce',
+  'referrer-policy': 'same-origin',
+  'x-content-type-options': 'nosniff',
+  'content-encoding': 'br',
+  'cf-ray': 'a050e615cb40d7af-LAX',
+  'alt-svc': 'h3=":443"; ma=86400'
+}
+{
+  characters: 'https://rickandmortyapi.com/api/character',
+  locations: 'https://rickandmortyapi.com/api/location',
+  episodes: 'https://rickandmortyapi.com/api/episode'
+}
