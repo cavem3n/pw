@@ -30,6 +30,9 @@ jobs:
     #- name: Run Playwright tests
     #  run: npx playwright test --reporter=list
 
+      env:
+      REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
+
     - name: Run Playwright tests
       run: npm run ci-test
     
