@@ -74,6 +74,7 @@ https://cavem3n.github.io/pw/
 - CSV Sync loading & Test Data-driven.
 - Execute CI Tests in GitHub Actions.
 - Generate Allure Report and upload to GitHub Pages.
+- API Testing and .env / GitHub Secrets management.
 
 
 ## License
