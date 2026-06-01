@@ -1,9 +1,9 @@
 import { test } from '@playwright/test'
 import fs from 'fs'
 import path from 'path'
-import { CommonPageMethods } from '../pages/common-page/common-page.methods.ts'
-import { FormPageMethods } from '../pages/form-page/form-page.methods.ts'
-import { readCsv } from '../support/csvHelper.ts'
+import { CommonPageMethods } from '../../pages/common-page/common-page.methods.ts'
+import { FormPageMethods } from '../../pages/form-page/form-page.methods.ts'
+import { readCsv } from '../../support/csvHelper.ts'
 
 //CSV Data must be loaded before Describe in Test
   const csvPath = path.join(process.cwd(), 'data', 'data.csv')
@@ -50,7 +50,7 @@ test.describe('Form Automation', () => {
 
       await commonPageMethods.navigatoToForm();
       await formPageMethods.fillForm(firstName, lastName, userEmail, gender, phone, birth, subjects, hobbies, state, city, address);
-      console.log(`RUNNING TEST: ${record.test_case}`);
+      //console.log(`RUNNING TEST: ${record.test_case}`);
     });
     
   }
