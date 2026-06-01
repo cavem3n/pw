@@ -29,7 +29,6 @@ jobs:
     #   Debug CI
     #- name: Run Playwright tests
     #  run: npx playwright test --reporter=list
-
       
     - name: Run Playwright tests
       env:
