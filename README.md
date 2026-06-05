@@ -16,10 +16,12 @@ This automation framework provides real-world exercises on using Playwright for 
 
 ## Documentation
 
-[Playwright](https://playwright.dev/docs/intro),
-[Allure Reports](https://allurereport.org/docs/),
-[TypeScript](https://www.typescriptlang.org/docs/),
-[CSV-Parse](https://csv.js.org/parse/)
+[Playwright](https://playwright.dev/docs/intro)\
+[Allure Reports](https://allurereport.org/docs/)\
+[TypeScript](https://www.typescriptlang.org/docs/)\
+[CSV-Parse](https://csv.js.org/parse/)\
+[dotenv](https://www.npmjs.com/package/dotenv)\
+[ReqRes](https://reqres.in/blog/free-api-for-testing)
 
 ## Installation
 
@@ -53,7 +55,7 @@ Install dependencies
 Start tests and generate report
 
 ```bash
-  npm run clean-results && npm run run-test & npm run generate-report
+  npm run clean-results && npm run run-test && npm run generate-report
 ```
 
 See Allure Report
@@ -74,6 +76,7 @@ https://cavem3n.github.io/pw/
 - CSV Sync loading & Test Data-driven.
 - Execute CI Tests in GitHub Actions.
 - Generate Allure Report and upload to GitHub Pages.
+- API Testing and .env / GitHub Secrets management.
 
 
 ## License

@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import 'dotenv/config';
 import fs from 'fs'
 import path from 'path'
-import { allure } from 'allure-playwright';
 
 test.describe('API Testing', async () => {
 
