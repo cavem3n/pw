@@ -41,7 +41,7 @@ export default defineConfig({
     },
     video: 'on',
     colorScheme: 'light',
-    headless: true,
+    headless: false,
     actionTimeout: 30_000,
     navigationTimeout: 60_000,
     // viewport: { width: 1280, height: 720 },
@@ -51,7 +51,12 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     browserName: 'chromium',
+    // launchOptions: {
+    //   args: ['--disable-web-security']
+    // },
+    locale: 'en-US',
     extraHTTPHeaders: {
+      'Accept-Language': 'en-US,en;q=0.9',
       'x-api-key': process.env.REQRES_API_KEY || '',
     },
   },
